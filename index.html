@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velira — Creative Direction & Magazine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:   #F46EB4;
+    --green:  #9FC24E;
+    --blue:   #64C1F6;
+    --navy:   #1A1A2E;
+    --cream:  #FAF9F6;
+    --dark:   #111111;
+    --pink-light: #fde8f3;
+    --green-light: #edf6d6;
+    --blue-light:  #ddf1fd;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(244,110,180,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 900;
+    color: var(--dark); letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--pink); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none; color: var(--dark);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-cta {
+    background: var(--pink); color: #fff;
+    padding: 0.6rem 1.4rem; border-radius: 2rem;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: #d4558f; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 5rem; position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 2px; background: var(--green);
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 1.0; letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title .pink { color: var(--pink); font-style: italic; }
+  .hero-title .blue { color: var(--blue); }
+  .hero-sub {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+    color: #555; max-width: 440px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--pink); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 3rem;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: #d4558f; }
+  .btn-outline {
+    border: 1.5px solid var(--dark); color: var(--dark);
+    padding: 0.85rem 2rem; border-radius: 3rem;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    background: var(--pink-light); overflow: hidden;
+  }
+  .hero-img-wrap {
+    width: 100%; height: 100%; position: relative;
+  }
+  .hero-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .hero-img-placeholder {
+    width: 100%; height: 100%; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--blue-light) 100%);
+    position: relative;
+  }
+  .hero-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(244,110,180,0.06) 40px, rgba(244,110,180,0.06) 41px
+    );
+  }
+  .placeholder-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: rgba(244,110,180,0.6);
+    letter-spacing: 0.1em; text-transform: uppercase; z-index: 1;
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(60px); opacity: 0.4; pointer-events: none;
+  }
+  .blob-1 { width: 300px; height: 300px; background: var(--pink); top: -80px; right: -80px; }
+  .blob-2 { width: 200px; height: 200px; background: var(--blue); bottom: 80px; left: 20px; }
+  .blob-3 { width: 150px; height: 150px; background: var(--green); top: 40%; right: 40px; }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--dark); color: var(--cream);
+    padding: 0.9rem 0; overflow: hidden;
+  }
+  .ticker-track {
+    display: flex; gap: 0; white-space: nowrap;
+    animation: ticker 18s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.1em;
+    padding: 0 2rem; flex-shrink: 0;
+  }
+  .ticker-item span { color: var(--pink); margin-right: 2rem; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 7rem 5rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; }
+  .label-pink { color: var(--pink); }
+  .label-pink::before { background: var(--pink); }
+  .label-green { color: var(--green); }
+  .label-green::before { background: var(--green); }
+  .label-blue { color: var(--blue); }
+  .label-blue::before { background: var(--blue); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem; font-weight: 300; line-height: 1.8;
+    color: #666; max-width: 560px; margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    background: var(--dark); color: var(--cream);
+    padding: 7rem 5rem;
+  }
+  #about .section-title { color: var(--cream); }
+  #about .section-sub { color: rgba(250,249,246,0.65); }
+  .about-img-wrap {
+    position: relative; border-radius: 0.5rem; overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+  .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .about-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #2a2a40 0%, #1a1a2e 100%);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 0.5rem; min-height: 480px;
+  }
+  .about-accent {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--pink); opacity: 0.25; filter: blur(30px);
+  }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.75rem; padding: 1.25rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 900; line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label { font-size: 0.8rem; color: rgba(250,249,246,0.5); letter-spacing: 0.05em; }
+  .about-values { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .value-tag {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+    padding: 0.4rem 1rem; border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.2); color: rgba(250,249,246,0.8);
+  }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { background: var(--cream); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .port-item {
+    position: relative; overflow: hidden; border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .port-item:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+  .port-item:nth-child(2) { grid-column: span 5; }
+  .port-item:nth-child(3) { grid-column: span 5; }
+  .port-item:nth-child(4) { grid-column: span 4; }
+  .port-item:nth-child(5) { grid-column: span 4; }
+  .port-item:nth-child(6) { grid-column: span 4; }
+
+  .port-img {
+    width: 100%; height: 100%; min-height: 220px;
+    object-fit: cover; display: block;
+    transition: transform 0.5s ease;
+  }
+  .port-placeholder {
+    width: 100%; min-height: 220px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.5rem;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: transform 0.5s ease;
+  }
+  .port-item:nth-child(1) .port-placeholder { min-height: 460px; }
+  .ph-1 { background: linear-gradient(135deg, var(--pink-light), #f9c8e7); color: var(--pink); }
+  .ph-2 { background: linear-gradient(135deg, var(--blue-light), #b5dff7); color: #3a8abf; }
+  .ph-3 { background: linear-gradient(135deg, var(--green-light), #cce89a); color: #5a7a28; }
+  .ph-4 { background: linear-gradient(135deg, var(--pink-light), var(--blue-light)); color: var(--pink); }
+  .ph-5 { background: linear-gradient(135deg, var(--green-light), var(--pink-light)); color: #5a7a28; }
+  .ph-6 { background: linear-gradient(135deg, var(--blue-light), var(--green-light)); color: #3a8abf; }
+
+  .port-item:hover .port-img,
+  .port-item:hover .port-placeholder { transform: scale(1.04); }
+  .port-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(17,17,17,0.85) 0%, transparent 55%);
+    opacity: 0; transition: opacity 0.35s;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 1.5rem;
+  }
+  .port-item:hover .port-overlay { opacity: 1; }
+  .port-overlay-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: #fff;
+    margin-bottom: 0.2rem;
+  }
+  .port-overlay-tag {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink);
+  }
+
+  /* ── PACKAGES ── */
+  #packages { background: #f5f3f0; }
+  .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .pkg {
+    background: #fff; border-radius: 1rem;
+    overflow: hidden; display: flex; flex-direction: column;
+    border: 1.5px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .pkg:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+  .pkg.featured { border-color: var(--pink); }
+  .pkg-top { padding: 2rem 2rem 1.5rem; flex: 1; }
+  .pkg-badge {
+    display: inline-block; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.9rem; border-radius: 2rem; margin-bottom: 1.25rem;
+  }
+  .badge-green { background: var(--green-light); color: #3d6010; }
+  .badge-pink  { background: var(--pink-light);  color: #a0336a; }
+  .badge-blue  { background: var(--blue-light);  color: #1a5f8a; }
+  .pkg-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900; margin-bottom: 0.4rem;
+  }
+  .pkg-tagline { font-size: 0.9rem; color: #777; line-height: 1.6; margin-bottom: 1.5rem; }
+  .pkg-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900; line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .pkg-price-sub { font-size: 0.82rem; color: #999; margin-bottom: 1.5rem; }
+  .pkg-divider { border: none; border-top: 1px solid #f0f0f0; margin-bottom: 1.25rem; }
+  .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+  .feat-check { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 0.65rem; }
+  .feat-yes { background: var(--green-light); color: #3d6010; }
+  .feat-no  { background: #f5f5f5; color: #bbb; }
+  .pkg-footer { padding: 1.5rem 2rem; border-top: 1px solid #f0f0f0; }
+  .pkg-btn {
+    display: block; text-align: center; text-decoration: none;
+    padding: 0.85rem; border-radius: 3rem; font-weight: 500; font-size: 0.88rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .pkg-btn:hover { transform: translateY(-1px); }
+  .btn-pkg-pink { background: var(--pink); color: #fff; }
+  .btn-pkg-pink:hover { background: #d4558f; }
+  .btn-pkg-outline { border: 1.5px solid var(--dark); color: var(--dark); }
+  .btn-pkg-outline:hover { border-color: var(--pink); color: var(--pink); }
+  .pkg-popular {
+    text-align: center; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--pink); color: #fff; padding: 0.45rem;
+  }
+  .pkg-addon {
+    background: var(--dark); color: var(--cream);
+    border-radius: 1rem; padding: 2rem 2.5rem;
+    margin-top: 1.5rem; display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .pkg-addon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .pkg-addon-list { font-size: 0.85rem; color: rgba(250,249,246,0.6); line-height: 1.8; }
+
+  /* ── MAGAZINE ── */
+  #magazine { background: var(--dark); color: var(--cream); }
+  #magazine .section-title { color: var(--cream); }
+  #magazine .section-sub { color: rgba(250,249,246,0.6); }
+  .mag-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+  .mag-cover {
+    aspect-ratio: 3/4; border-radius: 0.75rem; overflow: hidden;
+    position: relative;
+  }
+  .mag-cover img { width: 100%; height: 100%; object-fit: cover; }
+  .mag-cover-placeholder {
+    width: 100%; height: 100%; min-height: 500px;
+    background: linear-gradient(160deg, #2a2040 0%, #1a1a2e 50%, #1e2a1a 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1rem; position: relative;
+  }
+  .mag-cover-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; letter-spacing: 0.15em; color: var(--pink);
+  }
+  .mag-cover-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,249,246,0.4); }
+  .mag-badge-float {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: var(--pink); color: #fff;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em;
+    padding: 0.4rem 0.9rem; border-radius: 2rem; text-transform: uppercase;
+  }
+  .mag-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .mag-info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; line-height: 1.1; color: var(--cream);
+  }
+  .mag-info-title em { color: var(--pink); font-style: italic; }
+  .mag-info-body { font-size: 0.95rem; line-height: 1.8; color: rgba(250,249,246,0.65); }
+  .mag-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .mag-section-tag {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.5rem; padding: 0.75rem 1rem;
+    font-size: 0.8rem; font-weight: 500; color: rgba(250,249,246,0.8);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .mag-section-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot-pink::before   { background: var(--pink); }
+  .dot-green::before  { background: var(--green); }
+  .dot-blue::before   { background: var(--blue); }
+  .mag-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .btn-mag {
+    padding: 0.85rem 2rem; border-radius: 3rem; font-weight: 500; font-size: 0.88rem;
+    text-decoration: none; transition: transform 0.2s;
+  }
+  .btn-mag:hover { transform: translateY(-2px); }
+  .btn-mag-pink { background: var(--pink); color: #fff; }
+  .btn-mag-ghost { border: 1px solid rgba(255,255,255,0.25); color: var(--cream); }
+
+  /* ── BOOKING ── */
+  #booking { background: var(--cream); }
+  .booking-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .booking-form-card {
+    background: #fff; border-radius: 1.25rem;
+    padding: 2.5rem; box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 900; margin-bottom: 1.75rem;
+  }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block; font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 0.5rem; color: #555;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 0.8rem 1rem; border-radius: 0.6rem;
+    border: 1.5px solid #e8e8e8; font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; color: var(--dark); background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(244,110,180,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; padding: 1rem; border-radius: 3rem;
+    background: var(--pink); color: #fff; border: none;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: #d4558f; transform: translateY(-1px); }
+  .booking-info { display: flex; flex-direction: column; gap: 2rem; padding-top: 1rem; }
+  .booking-note {
+    background: var(--pink-light); border-radius: 1rem;
+    padding: 1.5rem; border-left: 3px solid var(--pink);
+  }
+  .booking-note-title { font-weight: 500; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .booking-note-body { font-size: 0.88rem; line-height: 1.7; color: #666; }
+  .booking-policy { display: flex; flex-direction: column; gap: 0.75rem; }
+  .policy-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.88rem; line-height: 1.6; color: #555; }
+  .policy-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); flex-shrink: 0; margin-top: 6px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark); color: var(--cream);
+    padding: 4rem 5rem 2rem;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900; margin-bottom: 0.75rem;
+  }
+  .footer-logo span { color: var(--pink); }
+  .footer-tagline { font-size: 0.88rem; color: rgba(250,249,246,0.5); line-height: 1.7; max-width: 280px; }
+  .footer-col-title {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(250,249,246,0.4); margin-bottom: 1rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { font-size: 0.88rem; color: rgba(250,249,246,0.7); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--pink); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 2rem; font-size: 0.8rem; color: rgba(250,249,246,0.35);
+  }
+  .footer-socials { display: flex; gap: 1rem; }
+  .social-pill {
+    padding: 0.35rem 0.9rem; border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.75rem; color: rgba(250,249,246,0.6);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .social-pill:hover { border-color: var(--pink); color: var(--pink); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #home { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 5rem 1.5rem 4rem; }
+    section { padding: 5rem 1.5rem; }
+    #about { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .mag-layout { grid-template-columns: 1fr; }
+    .booking-wrap { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .port-item { grid-column: span 1 !important; grid-row: span 1 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The <span>Velira</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#packages">Services</a></li>
+    <li><a href="#magazine">Magazine</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Creative Direction & Magazine</p>
+    <h1 class="hero-title">
+      Where <span class="pink">passion</span><br>
+      meets <span class="blue">purpose</span>
+    </h1>
+    <p class="hero-sub">
+      The Velira is a creative platform built to amplify diverse voices, celebrate Black culture, and give visionaries a stage. Founded by The Velira — a creative platform built on purpose, legacy, and bold visual storytelling.
+    </p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-primary">Explore Services</a>
+      <a href="#magazine" class="btn-outline">Read the Magazine</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-blob blob-3"></div>
+    <img src="hero.jpg" alt="The Velira" style="width:100%;height:100%;object-fit:cover;min-height:100vh;">
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>✦</span> Creative Direction</span>
+    <span class="ticker-item"><span>✦</span> Visual Storytelling</span>
+    <span class="ticker-item"><span>✦</span> The Velira Magazine</span>
+    <span class="ticker-item"><span>✦</span> Art Direction</span>
+    <span class="ticker-item"><span>✦</span> Brand Identity</span>
+    <span class="ticker-item"><span>✦</span> Black Culture</span>
+    <span class="ticker-item"><span>✦</span> Creative Direction</span>
+    <span class="ticker-item"><span>✦</span> Visual Storytelling</span>
+    <span class="ticker-item"><span>✦</span> The Velira Magazine</span>
+    <span class="ticker-item"><span>✦</span> Art Direction</span>
+    <span class="ticker-item"><span>✦</span> Brand Identity</span>
+    <span class="ticker-item"><span>✦</span> Black Culture</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap">
+    <img src="about.jpg" alt="The Velira" style="width:100%;height:100%;object-fit:cover;border-radius:0.5rem;min-height:480px;">
+    <div class="about-accent"></div>
+  </div>
+  <div>
+    <p class="section-label label-pink">About The Velira</p>
+    <h2 class="section-title" style="color:var(--cream);">A creative platform<br><em style="color:var(--pink);font-style:italic;">building legacy</em></h2>
+    <p class="section-sub">
+      The Velira is a creative magazine and direction platform dedicated to amplifying diverse voices across art, music, fashion, and entrepreneurship. Built on a foundation of faith, creativity, and cultural pride — The Velira exists to give every creative a stage.
+    </p>
+    <p class="section-sub" style="margin-bottom:0;">
+      The Velira is not just a brand — it is a movement. A space where creativity is celebrated, diverse voices are amplified, and every artist, entrepreneur, and dreamer finds their stage.
+    </p>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--pink);">2018</div>
+        <div class="stat-label">First fashion show produced</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--blue);">Intl.</div>
+        <div class="stat-label">Costa Rica Fashion Week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--green);">3</div>
+        <div class="stat-label">Creative directing packages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--pink);">∞</div>
+        <div class="stat-label">Stories left to tell</div>
+      </div>
+    </div>
+    <div class="about-values">
+      <span class="value-tag">Creativity</span>
+      <span class="value-tag">Freedom</span>
+      <span class="value-tag">Collaboration</span>
+      <span class="value-tag">Innovation</span>
+      <span class="value-tag">Authenticity</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="section-label label-green fade-up">Portfolio</p>
+  <h2 class="section-title fade-up">The work speaks.</h2>
+  <p class="section-sub fade-up">A curated selection of creative direction, editorial shoots, and visual storytelling projects.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+  <div class="port-item"><img src="port2.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Pink Barbie Maternity"><div class="port-overlay"><p class="port-overlay-title">Pink Barbie Maternity</p><p class="port-overlay-tag">The Production Package</p></div></div>
+  <div class="port-item"><img src="port5.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Red Phone Editorial"><div class="port-overlay"><p class="port-overlay-title">Red Phone Editorial</p><p class="port-overlay-tag">The Edit Package</p></div></div>
+  <div class="port-item"><img src="port8.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Barbie World"><div class="port-overlay"><p class="port-overlay-title">Barbie World</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+</div>
+<div style="margin-top:12px;" class="port-item">
+  <img src="port4.jpg" style="width:100%;height:360px;object-fit:cover;object-position:center 35%;" alt="Angel Wings">
+  <div class="port-overlay"><p class="port-overlay-title">Angel Wings Editorial</p><p class="port-overlay-tag">Creative Direction · The Velira</p></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px;">
+  <div class="port-item"><img src="port3.jpg" style="width:100%;height:320px;object-fit:cover;object-position:top;" alt="Pink Kitchen"><div class="port-overlay"><p class="port-overlay-title">Pink Kitchen</p><p class="port-overlay-tag">The Production Package</p></div></div>
+  <div class="port-item"><img src="port7.jpg" style="width:100%;height:320px;object-fit:cover;object-position:top;" alt="Mirror Reflection"><div class="port-overlay"><p class="port-overlay-title">Mirror Reflection</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+  <div class="port-item"><img src="port9.jpg" style="width:100%;height:320px;object-fit:cover;object-position:top;" alt="Yellow Gown"><div class="port-overlay"><p class="port-overlay-title">Yellow Gown Editorial</p><p class="port-overlay-tag">The Blueprint Package</p></div></div>
+  <div class="port-item"><img src="port10.jpg" style="width:100%;height:320px;object-fit:cover;object-position:top;" alt="Blue Blazer"><div class="port-overlay"><p class="port-overlay-title">Blue Blazer Editorial</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+</div>TYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velira — Creative Direction & Magazine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:   #F46EB4;
+    --green:  #9FC24E;
+    --blue:   #64C1F6;
+    --navy:   #1A1A2E;
+    --cream:  #FAF9F6;
+    --dark:   #111111;
+    --pink-light: #fde8f3;
+    --green-light: #edf6d6;
+    --blue-light:  #ddf1fd;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(244,110,180,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 900;
+    color: var(--dark); letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--pink); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; text-decoration: none; color: var(--dark);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--pink); }
+  .nav-cta {
+    background: var(--pink); color: #fff;
+    padding: 0.6rem 1.4rem; border-radius: 2rem;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: #d4558f; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 80px; overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 6rem 3rem 6rem 5rem; position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 2px; background: var(--green);
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 900; line-height: 1.0; letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-title .pink { color: var(--pink); font-style: italic; }
+  .hero-title .blue { color: var(--blue); }
+  .hero-sub {
+    font-size: 1.05rem; font-weight: 300; line-height: 1.75;
+    color: #555; max-width: 440px; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--pink); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 3rem;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: #d4558f; }
+  .btn-outline {
+    border: 1.5px solid var(--dark); color: var(--dark);
+    padding: 0.85rem 2rem; border-radius: 3rem;
+    font-weight: 500; font-size: 0.9rem; text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    background: var(--pink-light); overflow: hidden;
+  }
+  .hero-img-wrap {
+    width: 100%; height: 100%; position: relative;
+  }
+  .hero-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .hero-img-placeholder {
+    width: 100%; height: 100%; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--pink-light) 0%, var(--blue-light) 100%);
+    position: relative;
+  }
+  .hero-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(244,110,180,0.06) 40px, rgba(244,110,180,0.06) 41px
+    );
+  }
+  .placeholder-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: rgba(244,110,180,0.6);
+    letter-spacing: 0.1em; text-transform: uppercase; z-index: 1;
+  }
+  .hero-blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(60px); opacity: 0.4; pointer-events: none;
+  }
+  .blob-1 { width: 300px; height: 300px; background: var(--pink); top: -80px; right: -80px; }
+  .blob-2 { width: 200px; height: 200px; background: var(--blue); bottom: 80px; left: 20px; }
+  .blob-3 { width: 150px; height: 150px; background: var(--green); top: 40%; right: 40px; }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--dark); color: var(--cream);
+    padding: 0.9rem 0; overflow: hidden;
+  }
+  .ticker-track {
+    display: flex; gap: 0; white-space: nowrap;
+    animation: ticker 18s linear infinite;
+  }
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.1em;
+    padding: 0 2rem; flex-shrink: 0;
+  }
+  .ticker-item span { color: var(--pink); margin-right: 2rem; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  section { padding: 7rem 5rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; }
+  .label-pink { color: var(--pink); }
+  .label-pink::before { background: var(--pink); }
+  .label-green { color: var(--green); }
+  .label-green::before { background: var(--green); }
+  .label-blue { color: var(--blue); }
+  .label-blue::before { background: var(--blue); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1rem; font-weight: 300; line-height: 1.8;
+    color: #666; max-width: 560px; margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+    background: var(--dark); color: var(--cream);
+    padding: 7rem 5rem;
+  }
+  #about .section-title { color: var(--cream); }
+  #about .section-sub { color: rgba(250,249,246,0.65); }
+  .about-img-wrap {
+    position: relative; border-radius: 0.5rem; overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+  .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .about-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #2a2a40 0%, #1a1a2e 100%);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 0.5rem; min-height: 480px;
+  }
+  .about-accent {
+    position: absolute; bottom: -20px; right: -20px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--pink); opacity: 0.25; filter: blur(30px);
+  }
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.75rem; padding: 1.25rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 900; line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label { font-size: 0.8rem; color: rgba(250,249,246,0.5); letter-spacing: 0.05em; }
+  .about-values { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .value-tag {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em;
+    padding: 0.4rem 1rem; border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.2); color: rgba(250,249,246,0.8);
+  }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { background: var(--cream); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  .port-item {
+    position: relative; overflow: hidden; border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .port-item:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+  .port-item:nth-child(2) { grid-column: span 5; }
+  .port-item:nth-child(3) { grid-column: span 5; }
+  .port-item:nth-child(4) { grid-column: span 4; }
+  .port-item:nth-child(5) { grid-column: span 4; }
+  .port-item:nth-child(6) { grid-column: span 4; }
+
+  .port-img {
+    width: 100%; height: 100%; min-height: 220px;
+    object-fit: cover; display: block;
+    transition: transform 0.5s ease;
+  }
+  .port-placeholder {
+    width: 100%; min-height: 220px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.5rem;
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: transform 0.5s ease;
+  }
+  .port-item:nth-child(1) .port-placeholder { min-height: 460px; }
+  .ph-1 { background: linear-gradient(135deg, var(--pink-light), #f9c8e7); color: var(--pink); }
+  .ph-2 { background: linear-gradient(135deg, var(--blue-light), #b5dff7); color: #3a8abf; }
+  .ph-3 { background: linear-gradient(135deg, var(--green-light), #cce89a); color: #5a7a28; }
+  .ph-4 { background: linear-gradient(135deg, var(--pink-light), var(--blue-light)); color: var(--pink); }
+  .ph-5 { background: linear-gradient(135deg, var(--green-light), var(--pink-light)); color: #5a7a28; }
+  .ph-6 { background: linear-gradient(135deg, var(--blue-light), var(--green-light)); color: #3a8abf; }
+
+  .port-item:hover .port-img,
+  .port-item:hover .port-placeholder { transform: scale(1.04); }
+  .port-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(17,17,17,0.85) 0%, transparent 55%);
+    opacity: 0; transition: opacity 0.35s;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; padding: 1.5rem;
+  }
+  .port-item:hover .port-overlay { opacity: 1; }
+  .port-overlay-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 700; color: #fff;
+    margin-bottom: 0.2rem;
+  }
+  .port-overlay-tag {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink);
+  }
+
+  /* ── PACKAGES ── */
+  #packages { background: #f5f3f0; }
+  .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .pkg {
+    background: #fff; border-radius: 1rem;
+    overflow: hidden; display: flex; flex-direction: column;
+    border: 1.5px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .pkg:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+  .pkg.featured { border-color: var(--pink); }
+  .pkg-top { padding: 2rem 2rem 1.5rem; flex: 1; }
+  .pkg-badge {
+    display: inline-block; font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.3rem 0.9rem; border-radius: 2rem; margin-bottom: 1.25rem;
+  }
+  .badge-green { background: var(--green-light); color: #3d6010; }
+  .badge-pink  { background: var(--pink-light);  color: #a0336a; }
+  .badge-blue  { background: var(--blue-light);  color: #1a5f8a; }
+  .pkg-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 900; margin-bottom: 0.4rem;
+  }
+  .pkg-tagline { font-size: 0.9rem; color: #777; line-height: 1.6; margin-bottom: 1.5rem; }
+  .pkg-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem; font-weight: 900; line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .pkg-price-sub { font-size: 0.82rem; color: #999; margin-bottom: 1.5rem; }
+  .pkg-divider { border: none; border-top: 1px solid #f0f0f0; margin-bottom: 1.25rem; }
+  .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-features li { font-size: 0.88rem; display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+  .feat-check { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 0.65rem; }
+  .feat-yes { background: var(--green-light); color: #3d6010; }
+  .feat-no  { background: #f5f5f5; color: #bbb; }
+  .pkg-footer { padding: 1.5rem 2rem; border-top: 1px solid #f0f0f0; }
+  .pkg-btn {
+    display: block; text-align: center; text-decoration: none;
+    padding: 0.85rem; border-radius: 3rem; font-weight: 500; font-size: 0.88rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .pkg-btn:hover { transform: translateY(-1px); }
+  .btn-pkg-pink { background: var(--pink); color: #fff; }
+  .btn-pkg-pink:hover { background: #d4558f; }
+  .btn-pkg-outline { border: 1.5px solid var(--dark); color: var(--dark); }
+  .btn-pkg-outline:hover { border-color: var(--pink); color: var(--pink); }
+  .pkg-popular {
+    text-align: center; font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--pink); color: #fff; padding: 0.45rem;
+  }
+  .pkg-addon {
+    background: var(--dark); color: var(--cream);
+    border-radius: 1rem; padding: 2rem 2.5rem;
+    margin-top: 1.5rem; display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .pkg-addon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .pkg-addon-list { font-size: 0.85rem; color: rgba(250,249,246,0.6); line-height: 1.8; }
+
+  /* ── MAGAZINE ── */
+  #magazine { background: var(--dark); color: var(--cream); }
+  #magazine .section-title { color: var(--cream); }
+  #magazine .section-sub { color: rgba(250,249,246,0.6); }
+  .mag-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+  .mag-cover {
+    aspect-ratio: 3/4; border-radius: 0.75rem; overflow: hidden;
+    position: relative;
+  }
+  .mag-cover img { width: 100%; height: 100%; object-fit: cover; }
+  .mag-cover-placeholder {
+    width: 100%; height: 100%; min-height: 500px;
+    background: linear-gradient(160deg, #2a2040 0%, #1a1a2e 50%, #1e2a1a 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1rem; position: relative;
+  }
+  .mag-cover-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; letter-spacing: 0.15em; color: var(--pink);
+  }
+  .mag-cover-sub { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,249,246,0.4); }
+  .mag-badge-float {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: var(--pink); color: #fff;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em;
+    padding: 0.4rem 0.9rem; border-radius: 2rem; text-transform: uppercase;
+  }
+  .mag-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .mag-info-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; line-height: 1.1; color: var(--cream);
+  }
+  .mag-info-title em { color: var(--pink); font-style: italic; }
+  .mag-info-body { font-size: 0.95rem; line-height: 1.8; color: rgba(250,249,246,0.65); }
+  .mag-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .mag-section-tag {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0.5rem; padding: 0.75rem 1rem;
+    font-size: 0.8rem; font-weight: 500; color: rgba(250,249,246,0.8);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .mag-section-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .dot-pink::before   { background: var(--pink); }
+  .dot-green::before  { background: var(--green); }
+  .dot-blue::before   { background: var(--blue); }
+  .mag-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .btn-mag {
+    padding: 0.85rem 2rem; border-radius: 3rem; font-weight: 500; font-size: 0.88rem;
+    text-decoration: none; transition: transform 0.2s;
+  }
+  .btn-mag:hover { transform: translateY(-2px); }
+  .btn-mag-pink { background: var(--pink); color: #fff; }
+  .btn-mag-ghost { border: 1px solid rgba(255,255,255,0.25); color: var(--cream); }
+
+  /* ── BOOKING ── */
+  #booking { background: var(--cream); }
+  .booking-wrap {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .booking-form-card {
+    background: #fff; border-radius: 1.25rem;
+    padding: 2.5rem; box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  }
+  .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 900; margin-bottom: 1.75rem;
+  }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block; font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 0.5rem; color: #555;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 0.8rem 1rem; border-radius: 0.6rem;
+    border: 1.5px solid #e8e8e8; font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem; color: var(--dark); background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(244,110,180,0.12);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; padding: 1rem; border-radius: 3rem;
+    background: var(--pink); color: #fff; border: none;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
+    cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 0.5rem;
+  }
+  .form-submit:hover { background: #d4558f; transform: translateY(-1px); }
+  .booking-info { display: flex; flex-direction: column; gap: 2rem; padding-top: 1rem; }
+  .booking-note {
+    background: var(--pink-light); border-radius: 1rem;
+    padding: 1.5rem; border-left: 3px solid var(--pink);
+  }
+  .booking-note-title { font-weight: 500; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .booking-note-body { font-size: 0.88rem; line-height: 1.7; color: #666; }
+  .booking-policy { display: flex; flex-direction: column; gap: 0.75rem; }
+  .policy-item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.88rem; line-height: 1.6; color: #555; }
+  .policy-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); flex-shrink: 0; margin-top: 6px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark); color: var(--cream);
+    padding: 4rem 5rem 2rem;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; font-weight: 900; margin-bottom: 0.75rem;
+  }
+  .footer-logo span { color: var(--pink); }
+  .footer-tagline { font-size: 0.88rem; color: rgba(250,249,246,0.5); line-height: 1.7; max-width: 280px; }
+  .footer-col-title {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: rgba(250,249,246,0.4); margin-bottom: 1rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { font-size: 0.88rem; color: rgba(250,249,246,0.7); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--pink); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 2rem; font-size: 0.8rem; color: rgba(250,249,246,0.35);
+  }
+  .footer-socials { display: flex; gap: 1rem; }
+  .social-pill {
+    padding: 0.35rem 0.9rem; border-radius: 2rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.75rem; color: rgba(250,249,246,0.6);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .social-pill:hover { border-color: var(--pink); color: var(--pink); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #home { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 5rem 1.5rem 4rem; }
+    section { padding: 5rem 1.5rem; }
+    #about { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
+    .packages-grid { grid-template-columns: 1fr; }
+    .mag-layout { grid-template-columns: 1fr; }
+    .booking-wrap { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .port-item { grid-column: span 1 !important; grid-row: span 1 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The <span>Velira</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#packages">Services</a></li>
+    <li><a href="#magazine">Magazine</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Creative Direction & Magazine</p>
+    <h1 class="hero-title">
+      Where <span class="pink">passion</span><br>
+      meets <span class="blue">purpose</span>
+    </h1>
+    <p class="hero-sub">
+      The Velira is a creative platform built to amplify diverse voices, celebrate Black culture, and give visionaries a stage. Founded by The Velira — a creative platform built on purpose, legacy, and bold visual storytelling.
+    </p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-primary">Explore Services</a>
+      <a href="#magazine" class="btn-outline">Read the Magazine</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+    <div class="hero-blob blob-3"></div>
+    <img src="hero.jpg" alt="The Velira" style="width:100%;height:100%;object-fit:cover;min-height:100vh;">
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>✦</span> Creative Direction</span>
+    <span class="ticker-item"><span>✦</span> Visual Storytelling</span>
+    <span class="ticker-item"><span>✦</span> The Velira Magazine</span>
+    <span class="ticker-item"><span>✦</span> Art Direction</span>
+    <span class="ticker-item"><span>✦</span> Brand Identity</span>
+    <span class="ticker-item"><span>✦</span> Black Culture</span>
+    <span class="ticker-item"><span>✦</span> Creative Direction</span>
+    <span class="ticker-item"><span>✦</span> Visual Storytelling</span>
+    <span class="ticker-item"><span>✦</span> The Velira Magazine</span>
+    <span class="ticker-item"><span>✦</span> Art Direction</span>
+    <span class="ticker-item"><span>✦</span> Brand Identity</span>
+    <span class="ticker-item"><span>✦</span> Black Culture</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap">
+    <img src="about.jpg" alt="The Velira" style="width:100%;height:100%;object-fit:cover;border-radius:0.5rem;min-height:480px;">
+    <div class="about-accent"></div>
+  </div>
+  <div>
+    <p class="section-label label-pink">About The Velira</p>
+    <h2 class="section-title" style="color:var(--cream);">A creative platform<br><em style="color:var(--pink);font-style:italic;">building legacy</em></h2>
+    <p class="section-sub">
+      The Velira is a creative magazine and direction platform dedicated to amplifying diverse voices across art, music, fashion, and entrepreneurship. Built on a foundation of faith, creativity, and cultural pride — The Velira exists to give every creative a stage.
+    </p>
+    <p class="section-sub" style="margin-bottom:0;">
+      The Velira is not just a brand — it is a movement. A space where creativity is celebrated, diverse voices are amplified, and every artist, entrepreneur, and dreamer finds their stage.
+    </p>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--pink);">2018</div>
+        <div class="stat-label">First fashion show produced</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--blue);">Intl.</div>
+        <div class="stat-label">Costa Rica Fashion Week</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--green);">3</div>
+        <div class="stat-label">Creative directing packages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:var(--pink);">∞</div>
+        <div class="stat-label">Stories left to tell</div>
+      </div>
+    </div>
+    <div class="about-values">
+      <span class="value-tag">Creativity</span>
+      <span class="value-tag">Freedom</span>
+      <span class="value-tag">Collaboration</span>
+      <span class="value-tag">Innovation</span>
+      <span class="value-tag">Authenticity</span>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="section-label label-green fade-up">Portfolio</p>
+  <h2 class="section-title fade-up">The work speaks.</h2>
+  <p class="section-sub fade-up">A curated selection of creative direction, editorial shoots, and visual storytelling projects.</p>
+
+  <div class="portfolio-grid">
+    <div class="port-item">
+      <!-- Replace div below with: <img src="your-image.jpg" class="port-img" alt="..."> -->
+      <div class="port-placeholder ph-1">
+        <span style="font-size:2rem;">✦</span>
+        <span>Featured Work</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Editorial Campaign</p>
+        <p class="port-overlay-tag">Creative Direction</p>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-placeholder ph-2">
+        <span style="font-size:1.5rem;">✦</span>
+        <span>Your Image</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Artist Shoot</p>
+        <p class="port-overlay-tag">The Blueprint Package</p>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-placeholder ph-3">
+        <span style="font-size:1.5rem;">✦</span>
+        <span>Your Image</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Brand Campaign</p>
+        <p class="port-overlay-tag">The Edit Package</p>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-placeholder ph-4">
+        <span style="font-size:1.5rem;">✦</span>
+        <span>Your Image</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Music Visual</p>
+        <p class="port-overlay-tag">Creative Direction</p>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-placeholder ph-5">
+        <span style="font-size:1.5rem;">✦</span>
+        <span>Your Image</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Fashion Editorial</p>
+        <p class="port-overlay-tag">The Production Package</p>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-placeholder ph-6">
+        <span style="font-size:1.5rem;">✦</span>
+        <span>Your Image</span>
+      </div>
+      <div class="port-overlay">
+        <p class="port-overlay-title">Content Creation</p>
+        <p class="port-overlay-tag">Creative Direction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <p class="section-label label-pink fade-up">Services</p>
+  <h2 class="section-title fade-up">Creative directing<br>packages</h2>
+  <p class="section-sub fade-up">On-site creative direction for musicians, brands, and content creators. You bring the vision — The Velira brings it to life.</p>
+
+  <div class="packages-grid">
+    <!-- TIER 1 -->
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-green">Tier 1 · The Vision</span>
+        <h3 class="pkg-name">The Blueprint</h3>
+        <p class="pkg-tagline">Full creative vision from scratch — concept, mood board, and direction all crafted by The Velira.</p>
+        <div class="pkg-price">$350</div>
+        <p class="pkg-price-sub">Per session · Up to 3 hrs on set</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">✓</span> Custom concept & theme development</li>
+          <li><span class="feat-check feat-yes">✓</span> Full mood board designed by The Velira</li>
+          <li><span class="feat-check feat-yes">✓</span> Color palette & visual direction guide</li>
+          <li><span class="feat-check feat-yes">✓</span> On-site creative direction (3 hrs)</li>
+          <li><span class="feat-check feat-yes">✓</span> 1 pre-shoot consultation call</li>
+          <li><span class="feat-check feat-no">✗</span> <span style="color:#bbb;">Styling not covered</span></li>
+          <li><span class="feat-check feat-no">✗</span> <span style="color:#bbb;">Location not covered</span></li>
+        </ul>
+      </div>
+      <div class="pkg-footer">
+        <a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- TIER 2 -->
+    <div class="pkg featured fade-up">
+      <div class="pkg-popular">Most Popular</div>
+      <div class="pkg-top">
+        <span class="pkg-badge badge-pink">Tier 2 · The Experience</span>
+        <h3 class="pkg-name">The Edit</h3>
+        <p class="pkg-tagline">Concept, mood board, and styling by The Velira. Client secures and funds the location.</p>
+        <div class="pkg-price" style="color:var(--pink);">$650</div>
+        <p class="pkg-price-sub">Per session · Up to 4 hrs on set</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">✓</span> Custom concept & theme development</li>
+          <li><span class="feat-check feat-yes">✓</span> Full mood board designed by The Velira</li>
+          <li><span class="feat-check feat-yes">✓</span> Styling direction & wardrobe guide</li>
+          <li><span class="feat-check feat-yes">✓</span> Location scouted & recommended</li>
+          <li><span class="feat-check feat-yes">✓</span> On-site creative direction (4 hrs)</li>
+          <li><span class="feat-check feat-yes">✓</span> Shot list & creative brief document</li>
+          <li><span class="feat-check feat-yes">✓</span> 1 pre-shoot consultation call</li>
+        </ul>
+      </div>
+      <div class="pkg-footer">
+        <a href="#booking" class="pkg-btn btn-pkg-pink">Book This Package</a>
+      </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-blue">Tier 3 · The Full Picture</span>
+        <h3 class="pkg-name">The Production</h3>
+        <p class="pkg-tagline">Everything chosen by The Velira — concept, styling, location. Just show up and shoot.</p>
+        <div class="pkg-price">$1,200</div>
+        <p class="pkg-price-sub">Per session · Up to 6 hrs on set</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">✓</span> Custom concept & theme development</li>
+          <li><span class="feat-check feat-yes">✓</span> Full mood board designed by The Velira</li>
+          <li><span class="feat-check feat-yes">✓</span> Head-to-toe styling curation</li>
+          <li><span class="feat-check feat-yes">✓</span> Location scouted & selected by The Velira</li>
+          <li><span class="feat-check feat-yes">✓</span> On-site creative direction (6 hrs)</li>
+          <li><span class="feat-check feat-yes">✓</span> Full creative brief & shot list</li>
+          <li><span class="feat-check feat-yes">✓</span> 2 pre-shoot calls included</li>
+          <li><span class="feat-check feat-yes">✓</span> Pose & movement direction on set</li>
+        </ul>
+      </div>
+      <div class="pkg-footer">
+        <a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pkg-addon fade-up">
+    <div>
+      <p class="pkg-addon-title">Add-ons available for any package</p>
+      <p class="pkg-addon-list">Additional hours (+$75/hr) &nbsp;·&nbsp; Rush booking within 48 hrs (+$100) &nbsp;·&nbsp; Velira editorial feature (inquire) &nbsp;·&nbsp; Travel outside DFW (mileage + time)</p>
+    </div>
+    <a href="#booking" class="btn-primary" style="white-space:nowrap;">Inquire Now</a>
+  </div>
+</section>
+
+<!-- MAGAZINE -->
+<section id="magazine">
+  <p class="section-label label-blue fade-up">The Velira Magazine</p>
+  <div class="mag-layout">
+    <div class="mag-cover fade-up">
+      <div class="mag-cover-placeholder">
+        <!-- Replace with: <img src="magazine-cover.jpg" alt="The Velira Issue 1"> -->
+        <div class="mag-cover-label">THE VELIRA</div>
+        <div class="mag-cover-sub">Issue No. 1 · Coming Soon</div>
+      </div>
+      <span class="mag-badge-float">Coming Soon</span>
+    </div>
+    <div class="mag-info fade-up">
+      <h2 class="mag-info-title">Where <em>every voice</em><br>finds its stage.</h2>
+      <p class="mag-info-body">
+        The Velira is a creative magazine celebrating the art, culture, and people who breathe life into creativity and innovation. Rooted in Black culture and built for visionaries, dreamers, and creators aged 18–35 — it is a platform, a movement, and a legacy in motion.
+      </p>
+      <div>
+        <p style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,249,246,0.4);margin-bottom:0.75rem;">Magazine Sections</p>
+        <div class="mag-sections">
+          <span class="mag-section-tag dot-pink">Art Direction</span>
+          <span class="mag-section-tag dot-green">Fashion</span>
+          <span class="mag-section-tag dot-blue">Music</span>
+          <span class="mag-section-tag dot-pink">Culture</span>
+          <span class="mag-section-tag dot-green">Entrepreneurship</span>
+          <span class="mag-section-tag dot-blue">Visionaries</span>
+          <span class="mag-section-tag dot-pink">Resources</span>
+          <span class="mag-section-tag dot-green">Community</span>
+        </div>
+      </div>
+      <div class="mag-cta">
+        <a href="#" class="btn-mag btn-mag-pink">Get Notified at Launch</a>
+        <a href="#" class="btn-mag btn-mag-ghost">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <p class="section-label label-pink fade-up">Booking</p>
+  <h2 class="section-title fade-up">Let's build<br>your vision.</h2>
+  <p class="section-sub fade-up">Fill out the form below to inquire about a creative directing package. The Velira team will be in touch within 48 hours.</p>
+
+  <div class="booking-wrap">
+    <div class="booking-form-card fade-up">
+      <p class="form-title">Book a Package</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="fname" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lname" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="you@email.com">
+      </div>
+      <div class="form-group">
+        <label>Instagram Handle</label>
+        <input type="text" id="instagram" placeholder="@yourhandle">
+      </div>
+      <div class="form-group">
+        <label>Package Interest</label>
+        <select id="package">
+          <option value="">Select a package...</option>
+          <option>The Shot — Photography — $220</option>
+          <option>The Product — Product Shoots — $200</option>
+          <option>The Content — Content Creation — $300</option>
+          <option>The Blueprint — Creative Direction — $150</option>
+          <option>The Edit — Creative Direction — $500</option>
+          <option>The Production — Creative Direction — $850</option>
+          <option>Not sure yet — let's chat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Shoot Type</label>
+        <select id="shoottype">
+          <option value="">Select a type...</option>
+          <option>Music / Artist</option>
+          <option>Brand / Business</option>
+          <option>Content Creator</option>
+          <option>Fashion / Editorial</option>
+          <option>Product</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell me about your vision</label>
+        <textarea id="vision" placeholder="Describe your shoot idea, vibe, any references, or questions..."></textarea>
+      </div>
+      <button class="form-submit" onclick="sendInquiry()">Send Inquiry ✦</button>
+      <p id="form-msg" style="display:none;margin-top:1rem;font-size:0.88rem;text-align:center;color:var(--pink);font-weight:500;"></p>
+    </div>
+
+    <div class="booking-info fade-up">
+      <div class="booking-note">
+        <p class="booking-note-title">Photographer fees are separate</p>
+        <p class="booking-note-body">The Velira directs — your photographer shoots. Don't have one? We can recommend trusted photographers in the DFW area.</p>
+      </div>
+      <div>
+        <p style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:1rem;">Booking Policies</p>
+        <div class="booking-policy">
+          <div class="policy-item"><span class="policy-dot"></span> A 50% non-refundable deposit is required to secure your date</div>
+          <div class="policy-item"><span class="policy-dot"></span> Remaining balance is due 48 hours before the shoot</div>
+          <div class="policy-item"><span class="policy-dot"></span> Rescheduling allowed once with 72+ hours notice</div>
+          <div class="policy-item"><span class="policy-dot"></span> All clients sign a Creative Services Agreement</div>
+          <div class="policy-item"><span class="policy-dot"></span> Location costs are always paid by the client</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.8rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:0.75rem;">Connect</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="#" style="padding:0.5rem 1.2rem;border:1.5px solid #e0e0e0;border-radius:2rem;font-size:0.83rem;color:var(--dark);text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--pink)';this.style.color='var(--pink)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.color='var(--dark)'">Instagram</a>
+          <a href="#" style="padding:0.5rem 1.2rem;border:1.5px solid #e0e0e0;border-radius:2rem;font-size:0.83rem;color:var(--dark);text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--pink)';this.style.color='var(--pink)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.color='var(--dark)'">TikTok</a>
+          <a href="#" style="padding:0.5rem 1.2rem;border:1.5px solid #e0e0e0;border-radius:2rem;font-size:0.83rem;color:var(--dark);text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--pink)';this.style.color='var(--pink)'" onmouseout="this.style.borderColor='#e0e0e0';this.style.color='var(--dark)'">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">The <span>Velira</span></div>
+      <p class="footer-tagline">Where passion meets purpose, where art meets soul, and where every voice finds its stage.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#packages">Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Magazine</p>
+      <ul class="footer-links">
+        <li><a href="#magazine">About The Velira</a></li>
+        <li><a href="#">Issue 1 — Coming Soon</a></li>
+        <li><a href="#">Get Notified</a></li>
+        <li><a href="#">Submit Your Story</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="#booking">Book a Package</a></li>
+        <li><a href="#">Press Inquiries</a></li>
+        <li><a href="#">Collaborations</a></li>
+        <li><a href="#">theVelira.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 The Velira. All rights reserved. The Velira · Creative Direction & Magazine</p>
+    <div class="footer-socials">
+      <a href="#" class="social-pill">Instagram</a>
+      <a href="#" class="social-pill">TikTok</a>
+      <a href="#" class="social-pill">Pinterest</a>
+      <a href="#" class="social-pill">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script>
+function sendInquiry() {
+  var fname    = document.getElementById('fname').value.trim();
+  var lname    = document.getElementById('lname').value.trim();
+  var email    = document.getElementById('email').value.trim();
+  var instagram= document.getElementById('instagram').value.trim();
+  var pkg      = document.getElementById('package').value;
+  var shoot    = document.getElementById('shoottype').value;
+  var vision   = document.getElementById('vision').value.trim();
+  var msg      = document.getElementById('form-msg');
+
+  if (!fname || !email || !pkg) {
+    msg.style.display = 'block';
+    msg.style.color = '#e24b4a';
+    msg.textContent = 'Please fill in your name, email, and package selection.';
+    return;
+  }
+
+  var subject = encodeURIComponent('New Inquiry — ' + pkg);
+  var body = encodeURIComponent(
+    'Name: ' + fname + ' ' + lname + '\n' +
+    'Email: ' + email + '\n' +
+    'Instagram: ' + instagram + '\n' +
+    'Package: ' + pkg + '\n' +
+    'Shoot Type: ' + shoot + '\n\n' +
+    'Vision:\n' + vision
+  );
+
+  window.location.href = 'mailto:thevelira@outlook.com?subject=' + subject + '&body=' + body;
+
+  msg.style.display = 'block';
+  msg.style.color = 'var(--pink)';
+  msg.textContent = 'Opening your email app... your inquiry is ready to send!';
+}
+</script>
+
+
+<script>
+function sendInquiry() {
+  var fname = document.getElementById('fname').value.trim();
+  var lname = document.getElementById('lname').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var instagram = document.getElementById('instagram').value.trim();
+  var pkg = document.getElementById('package').value;
+  var shoot = document.getElementById('shoottype').value;
+  var vision = document.getElementById('vision').value.trim();
+  var msg = document.getElementById('form-msg');
+  if (!fname || !email || !pkg) {
+    msg.style.display = 'block';
+    msg.style.color = '#e24b4a';
+    msg.textContent = 'Please fill in your name, email, and package selection.';
+    return;
+  }
+  var subject = encodeURIComponent('New Inquiry — ' + pkg);
+  var body = encodeURIComponent(
+    'Name: ' + fname + ' ' + lname + '\n' +
+    'Email: ' + email + '\n' +
+    'Instagram: ' + instagram + '\n' +
+    'Package: ' + pkg + '\n' +
+    'Shoot Type: ' + shoot + '\n\n' +
+    'Vision:\n' + vision
+  );
+  window.location.href = 'mailto:thevelira@outlook.com?subject=' + subject + '&body=' + body;
+  msg.style.display = 'block';
+  msg.style.color = '#F46EB4';
+  msg.textContent = 'Opening your email app — your inquiry is ready to send!';
+}
+</script>
+</body>
+</html>
