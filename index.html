@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velira — Creative Direction & Magazine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#F46EB4;--green:#9FC24E;--blue:#64C1F6;--navy:#1A1A2E;--cream:#FAF9F6;--dark:#111111;--pink-light:#fde8f3;--green-light:#edf6d6;--blue-light:#ddf1fd;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(250,249,246,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(244,110,180,0.2);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--dark);text-decoration:none;}
+.nav-logo span{color:var(--pink);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;color:var(--dark);transition:color 0.2s;}
+.nav-links a:hover{color:var(--pink);}
+.nav-cta{background:var(--pink);color:#fff;padding:0.6rem 1.4rem;border-radius:2rem;font-size:0.82rem;font-weight:500;text-transform:uppercase;text-decoration:none;}
+.nav-cta:hover{background:#d4558f;}
+#home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 5rem;}
+.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--green);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,5vw,5rem);font-weight:900;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.5rem;}
+.hero-title .pink{color:var(--pink);font-style:italic;}
+.hero-title .blue{color:var(--blue);}
+.hero-sub{font-size:1rem;font-weight:300;line-height:1.8;color:#555;max-width:420px;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--pink);color:#fff;padding:0.85rem 2rem;border-radius:3rem;font-weight:500;font-size:0.88rem;text-decoration:none;}
+.btn-primary:hover{background:#d4558f;}
+.btn-outline{border:1.5px solid var(--dark);color:var(--dark);padding:0.85rem 2rem;border-radius:3rem;font-weight:500;font-size:0.88rem;text-decoration:none;}
+.btn-outline:hover{border-color:var(--pink);color:var(--pink);}
+.hero-right{overflow:hidden;}
+.hero-right img{width:100%;height:100%;object-fit:cover;min-height:100vh;display:block;}
+.ticker-wrap{background:var(--dark);color:var(--cream);padding:0.9rem 0;overflow:hidden;}
+.ticker-track{display:flex;white-space:nowrap;animation:ticker 20s linear infinite;}
+.ticker-item{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.1em;padding:0 2rem;flex-shrink:0;}
+.ticker-item span{color:var(--pink);}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+section{padding:6rem 5rem;}
+.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem;}
+.section-label::before{content:'';display:block;width:24px;height:2px;}
+.label-pink{color:var(--pink);}.label-pink::before{background:var(--pink);}
+.label-green{color:var(--green);}.label-green::before{background:var(--green);}
+.label-blue{color:var(--blue);}.label-blue::before{background:var(--blue);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem;}
+.section-sub{font-size:0.95rem;font-weight:300;line-height:1.8;color:#666;max-width:540px;margin-bottom:3rem;}
+#about{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;background:var(--dark);color:var(--cream);padding:6rem 5rem;}
+#about .section-title{color:var(--cream);}
+#about .section-sub{color:rgba(250,249,246,0.65);}
+.about-img-wrap{border-radius:0.75rem;overflow:hidden;aspect-ratio:4/5;}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem;}
+.stat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:0.75rem;padding:1.1rem;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;line-height:1;margin-bottom:0.25rem;}
+.stat-label{font-size:0.78rem;color:rgba(250,249,246,0.5);}
+.about-values{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.75rem;}
+.value-tag{font-size:0.75rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:2rem;border:1px solid rgba(255,255,255,0.2);color:rgba(250,249,246,0.8);}
+#portfolio{background:var(--cream);}
+.port-item{position:relative;overflow:hidden;border-radius:0.5rem;cursor:pointer;}
+.port-item img{width:100%;display:block;object-fit:cover;transition:transform 0.5s ease;}
+.port-item:hover img{transform:scale(1.04);}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(17,17,17,0.85) 0%,transparent 55%);opacity:0;transition:opacity 0.35s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem;}
+.port-item:hover .port-overlay{opacity:1;}
+.port-overlay-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.2rem;}
+.port-overlay-tag{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink);}
+#packages{background:#f5f3f0;}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.pkg{background:#fff;border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;border:1.5px solid transparent;transition:transform 0.3s,box-shadow 0.3s;}
+.pkg:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.08);}
+.pkg.featured{border-color:var(--pink);}
+.pkg-popular{text-align:center;font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;background:var(--pink);color:#fff;padding:0.4rem;}
+.pkg-top{padding:1.75rem 1.75rem 1.25rem;flex:1;}
+.pkg-badge{display:inline-block;font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2rem;margin-bottom:1rem;}
+.badge-green{background:var(--green-light);color:#3d6010;}
+.badge-pink{background:var(--pink-light);color:#a0336a;}
+.badge-blue{background:var(--blue-light);color:#1a5f8a;}
+.pkg-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;margin-bottom:0.35rem;}
+.pkg-tagline{font-size:0.85rem;color:#777;line-height:1.6;margin-bottom:1.25rem;}
+.pkg-price{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;line-height:1;margin-bottom:0.25rem;}
+.pkg-price-sub{font-size:0.78rem;color:#999;margin-bottom:1.25rem;}
+.pkg-divider{border:none;border-top:1px solid #f0f0f0;margin-bottom:1rem;}
+.pkg-features{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+.pkg-features li{font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;}
+.feat-check{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;}
+.feat-yes{background:var(--green-light);color:#3d6010;}
+.feat-no{background:#f5f5f5;color:#bbb;}
+.pkg-footer{padding:1.25rem 1.75rem;border-top:1px solid #f0f0f0;}
+.pkg-btn{display:block;text-align:center;text-decoration:none;padding:0.8rem;border-radius:3rem;font-weight:500;font-size:0.85rem;}
+.btn-pkg-pink{background:var(--pink);color:#fff;}
+.btn-pkg-pink:hover{background:#d4558f;}
+.btn-pkg-outline{border:1.5px solid var(--dark);color:var(--dark);}
+.btn-pkg-outline:hover{border-color:var(--pink);color:var(--pink);}
+.pkg-addon{background:var(--dark);color:var(--cream);border-radius:1rem;padding:1.75rem 2.25rem;margin-top:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;}
+.pkg-addon-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.35rem;}
+.pkg-addon-list{font-size:0.82rem;color:rgba(250,249,246,0.6);line-height:1.8;}
+#magazine{background:var(--dark);color:var(--cream);}
+#magazine .section-title{color:var(--cream);}
+#magazine .section-sub{color:rgba(250,249,246,0.6);}
+.mag-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;align-items:start;}
+.mag-cover{aspect-ratio:3/4;border-radius:0.75rem;background:linear-gradient(160deg,#2a2040,#1a1a2e);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative;}
+.mag-cover-label{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.15em;color:var(--pink);}
+.mag-cover-sub{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,249,246,0.4);}
+.mag-badge-float{position:absolute;top:1.25rem;right:1.25rem;background:var(--pink);color:#fff;font-size:0.68rem;font-weight:500;padding:0.35rem 0.85rem;border-radius:2rem;text-transform:uppercase;}
+.mag-info{display:flex;flex-direction:column;gap:1.5rem;}
+.mag-info-title{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;line-height:1.15;color:var(--cream);}
+.mag-info-title em{color:var(--pink);font-style:italic;}
+.mag-info-body{font-size:0.92rem;line-height:1.8;color:rgba(250,249,246,0.65);}
+.mag-sections{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:0.5rem;}
+.mag-section-tag{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:0.5rem;padding:0.65rem 0.9rem;font-size:0.78rem;font-weight:500;color:rgba(250,249,246,0.8);display:flex;align-items:center;gap:0.5rem;}
+.mag-section-tag::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.dot-pink::before{background:var(--pink);}
+.dot-green::before{background:var(--green);}
+.dot-blue::before{background:var(--blue);}
+.mag-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;}
+.btn-mag{padding:0.8rem 1.75rem;border-radius:3rem;font-weight:500;font-size:0.85rem;text-decoration:none;}
+.btn-mag-pink{background:var(--pink);color:#fff;}
+.btn-mag-ghost{border:1px solid rgba(255,255,255,0.25);color:var(--cream);}
+#booking{background:var(--cream);}
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.booking-form-card{background:#fff;border-radius:1.25rem;padding:2.25rem;box-shadow:0 4px 40px rgba(0,0,0,0.06);}
+.form-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;margin-bottom:1.5rem;}
+.form-group{margin-bottom:1.1rem;}
+.form-group label{display:block;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.45rem;color:#555;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.75rem 0.9rem;border-radius:0.6rem;border:1.5px solid #e8e8e8;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);background:var(--cream);outline:none;-webkit-appearance:none;appearance:none;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--pink);}
+.form-group textarea{resize:vertical;min-height:95px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;padding:0.95rem;border-radius:3rem;background:var(--pink);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:500;cursor:pointer;margin-top:0.5rem;}
+.form-submit:hover{background:#d4558f;}
+.booking-info{display:flex;flex-direction:column;gap:2rem;padding-top:1rem;}
+.booking-note{background:var(--pink-light);border-radius:1rem;padding:1.4rem;border-left:3px solid var(--pink);}
+.booking-note-title{font-weight:500;margin-bottom:0.4rem;font-size:0.92rem;}
+.booking-note-body{font-size:0.85rem;line-height:1.7;color:#666;}
+.booking-policy{display:flex;flex-direction:column;gap:0.65rem;}
+.policy-item{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.85rem;line-height:1.6;color:#555;}
+.policy-dot{width:7px;height:7px;border-radius:50%;background:var(--pink);flex-shrink:0;margin-top:6px;}
+footer{background:var(--dark);color:var(--cream);padding:4rem 5rem 2rem;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;margin-bottom:0.7rem;}
+.footer-logo span{color:var(--pink);}
+.footer-tagline{font-size:0.85rem;color:rgba(250,249,246,0.5);line-height:1.7;max-width:260px;}
+.footer-col-title{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,249,246,0.4);margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:0.55rem;}
+.footer-links a{font-size:0.85rem;color:rgba(250,249,246,0.7);text-decoration:none;}
+.footer-links a:hover{color:var(--pink);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;font-size:0.78rem;color:rgba(250,249,246,0.35);}
+.footer-socials{display:flex;gap:0.75rem;}
+.social-pill{padding:0.32rem 0.85rem;border-radius:2rem;border:1px solid rgba(255,255,255,0.15);font-size:0.72rem;color:rgba(250,249,246,0.6);text-decoration:none;}
+.social-pill:hover{border-color:var(--pink);color:var(--pink);}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .nav-cta{padding:0.5rem 1rem;font-size:0.75rem;}
+  #home{grid-template-columns:1fr;min-height:auto;}
+  .hero-right{display:block;height:60vw;min-height:260px;}
+  .hero-right img{min-height:unset;height:100%;object-position:top;}
+  .hero-left{padding:3rem 1.5rem 2.5rem;}
+  .hero-title{font-size:2.6rem;}
+  .hero-sub{font-size:0.92rem;max-width:100%;}
+  .hero-actions{flex-direction:column;}
+  .btn-primary,.btn-outline{text-align:center;padding:0.8rem 1.5rem;}
+  .ticker-item{font-size:0.95rem;padding:0 1.25rem;}
+  section{padding:3.5rem 1.5rem;}
+  #about{grid-template-columns:1fr;padding:3.5rem 1.5rem;gap:2.5rem;}
+  .about-img-wrap{aspect-ratio:3/2;max-height:280px;}
+  .about-stats{grid-template-columns:1fr 1fr;gap:0.75rem;}
+  .stat-num{font-size:1.6rem;}
+  .port-item img{height:200px !important;}
+  .port-overlay{opacity:1;background:linear-gradient(to top,rgba(17,17,17,0.75) 0%,transparent 60%);}
+  .packages-grid{grid-template-columns:1fr;gap:1rem;}
+  .pkg-top{padding:1.5rem 1.5rem 1rem;}
+  .pkg-footer{padding:1rem 1.5rem;}
+  .pkg-price{font-size:2.2rem;}
+  .pkg-addon{flex-direction:column;padding:1.5rem;}
+  .pkg-addon a{text-align:center;}
+  .mag-layout{grid-template-columns:1fr;gap:2rem;}
+  .mag-cover{aspect-ratio:3/2;min-height:200px;}
+  .mag-cover-label{font-size:2rem;}
+  .mag-sections{grid-template-columns:1fr 1fr;}
+  .mag-cta{flex-direction:column;}
+  .btn-mag{text-align:center;}
+  .booking-wrap{grid-template-columns:1fr;gap:2rem;}
+  .form-row{grid-template-columns:1fr;}
+  .booking-form-card{padding:1.5rem;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem;padding-bottom:2rem;}
+  footer{padding:2.5rem 1.5rem 1.5rem;}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center;}
+  .footer-socials{flex-wrap:wrap;justify-content:center;}
+}
+@media(max-width:550px){
+  .hero-title{font-size:2.1rem;}
+  .hero-right{height:70vw;}
+  .section-title{font-size:1.8rem;}
+  .mag-sections{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">The <span>Velira</span></a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="#packages">Services</a></li>
+    <li><a href="#magazine">Magazine</a></li>
+    <li><a href="#booking">Book</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Book Now</a>
+</nav>
+
+<section id="home" style="padding:0;">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Creative Direction &amp; Magazine</p>
+    <h1 class="hero-title">Where <span class="pink">passion</span><br>meets <span class="blue">purpose</span></h1>
+    <p class="hero-sub">The Velira is a creative platform built to amplify diverse voices, celebrate Black culture, and give visionaries a stage.</p>
+    <div class="hero-actions">
+      <a href="#packages" class="btn-primary">Explore Services</a>
+      <a href="#magazine" class="btn-outline">Read the Magazine</a>
+    </div>
+  </div>
+  <div class="hero-right"><img src="hero.jpg" alt="The Velira"></div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>&#10022; </span>Creative Direction</span>
+    <span class="ticker-item"><span>&#10022; </span>Visual Storytelling</span>
+    <span class="ticker-item"><span>&#10022; </span>The Velira Magazine</span>
+    <span class="ticker-item"><span>&#10022; </span>Art Direction</span>
+    <span class="ticker-item"><span>&#10022; </span>Brand Identity</span>
+    <span class="ticker-item"><span>&#10022; </span>Black Culture</span>
+    <span class="ticker-item"><span>&#10022; </span>Creative Direction</span>
+    <span class="ticker-item"><span>&#10022; </span>Visual Storytelling</span>
+    <span class="ticker-item"><span>&#10022; </span>The Velira Magazine</span>
+    <span class="ticker-item"><span>&#10022; </span>Art Direction</span>
+    <span class="ticker-item"><span>&#10022; </span>Brand Identity</span>
+    <span class="ticker-item"><span>&#10022; </span>Black Culture</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="about-img-wrap"><img src="about.jpg" alt="The Velira"></div>
+  <div>
+    <p class="section-label label-pink">About The Velira</p>
+    <h2 class="section-title" style="color:var(--cream);">A creative platform<br><em style="color:var(--pink);font-style:italic;">building legacy</em></h2>
+    <p class="section-sub">The Velira is a creative magazine and direction platform dedicated to amplifying diverse voices across art, music, fashion, and entrepreneurship. Built on a foundation of faith, creativity, and cultural pride.</p>
+    <p class="section-sub" style="margin-bottom:0;">It is not just a brand &#8212; it is a movement. A space where art meets soul, bold vision meets authentic storytelling, and every voice belongs.</p>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num" style="color:var(--pink);">2018</div><div class="stat-label">First fashion show produced</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--blue);">Intl.</div><div class="stat-label">Costa Rica Fashion Week</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--green);">6</div><div class="stat-label">Service packages offered</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--pink);">&#8734;</div><div class="stat-label">Stories left to tell</div></div>
+    </div>
+    <div class="about-values">
+      <span class="value-tag">Creativity</span>
+      <span class="value-tag">Freedom</span>
+      <span class="value-tag">Collaboration</span>
+      <span class="value-tag">Innovation</span>
+      <span class="value-tag">Authenticity</span>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <p class="section-label label-green fade-up">Portfolio</p>
+  <h2 class="section-title fade-up">The work speaks.</h2>
+  <p class="section-sub fade-up">A curated selection of creative direction, editorial shoots, and visual storytelling. <a href="portfolio.html" style="color:var(--pink);font-weight:500;text-decoration:none;">View full portfolio &#8594;</a></p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+    <div class="port-item"><img src="port2.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Pink Barbie Maternity"><div class="port-overlay"><p class="port-overlay-title">Pink Barbie Maternity</p><p class="port-overlay-tag">The Production Package</p></div></div>
+    <div class="port-item"><img src="port5.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Red Phone Editorial"><div class="port-overlay"><p class="port-overlay-title">Red Phone Editorial</p><p class="port-overlay-tag">The Edit Package</p></div></div>
+    <div class="port-item"><img src="port8.jpg" style="width:100%;height:380px;object-fit:cover;object-position:top;" alt="Barbie World"><div class="port-overlay"><p class="port-overlay-title">Barbie World</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+  </div>
+  <div style="margin-top:12px;" class="port-item">
+    <img src="port4.jpg" style="width:100%;height:340px;object-fit:cover;object-position:center 38%;" alt="Angel Wings">
+    <div class="port-overlay"><p class="port-overlay-title">Angel Wings Editorial</p><p class="port-overlay-tag">Creative Direction</p></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px;">
+    <div class="port-item"><img src="port3.jpg" style="width:100%;height:300px;object-fit:cover;object-position:top;" alt="Pink Kitchen"><div class="port-overlay"><p class="port-overlay-title">Pink Kitchen</p><p class="port-overlay-tag">The Production Package</p></div></div>
+    <div class="port-item"><img src="port7.jpg" style="width:100%;height:300px;object-fit:cover;object-position:top;" alt="Mirror Reflection"><div class="port-overlay"><p class="port-overlay-title">Mirror Reflection</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+    <div class="port-item"><img src="port9.jpg" style="width:100%;height:300px;object-fit:cover;object-position:top;" alt="Yellow Gown"><div class="port-overlay"><p class="port-overlay-title">Yellow Gown Editorial</p><p class="port-overlay-tag">The Blueprint Package</p></div></div>
+    <div class="port-item"><img src="port10.jpg" style="width:100%;height:300px;object-fit:cover;object-position:top;" alt="Blue Blazer"><div class="port-overlay"><p class="port-overlay-title">Blue Blazer Editorial</p><p class="port-overlay-tag">Creative Direction</p></div></div>
+  </div>
+</section>
+
+<section id="packages">
+  <p class="section-label label-pink fade-up">Services</p>
+  <h2 class="section-title fade-up">Six packages.<br>One vision.</h2>
+  <p class="section-sub fade-up">From photography to full creative direction &#8212; there is a package for every creative at every stage.</p>
+  <div class="packages-grid">
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-blue">Photography</span>
+        <h3 class="pkg-name">The Shot</h3>
+        <p class="pkg-tagline">Clean, professional photography for individuals, artists, and creatives.</p>
+        <div class="pkg-price">$220</div>
+        <p class="pkg-price-sub">Per session</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>10 professionally edited photos</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>High resolution digital delivery</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Online gallery for download</li>
+          <li><span class="feat-check feat-no">&#10007;</span><span style="color:#bbb;">No creative direction</span></li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a></div>
+    </div>
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-green">Product Shoots</span>
+        <h3 class="pkg-name">The Product</h3>
+        <p class="pkg-tagline">Polished product photography for brands, businesses, and e-commerce.</p>
+        <div class="pkg-price">$200</div>
+        <p class="pkg-price-sub">Per session</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>10 professionally edited product photos</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Flat lay + styled shots</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>E-commerce &amp; social media ready</li>
+          <li><span class="feat-check feat-no">&#10007;</span><span style="color:#bbb;">No creative direction</span></li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a></div>
+    </div>
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-pink">Content Creation</span>
+        <h3 class="pkg-name">The Content</h3>
+        <p class="pkg-tagline">Reels, videos, and photos &#8212; everything you need to dominate your feed.</p>
+        <div class="pkg-price">$300</div>
+        <p class="pkg-price-sub">Per session</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>3 edited reels split into reusable clips</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>10 edited photos included</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Instagram, TikTok &amp; YouTube Shorts ready</li>
+          <li><span class="feat-check feat-no">&#10007;</span><span style="color:#bbb;">No creative direction</span></li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a></div>
+    </div>
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-green">Tier 1 Creative Direction</span>
+        <h3 class="pkg-name">The Blueprint</h3>
+        <p class="pkg-tagline">Full creative concept and mood board &#8212; delivered digitally, no on-site direction.</p>
+        <div class="pkg-price">$150</div>
+        <p class="pkg-price-sub">Delivered digitally</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>Custom concept &amp; theme development</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Full mood board by The Velira</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Color palette &amp; visual direction guide</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>1 creative consultation call</li>
+          <li><span class="feat-check feat-no">&#10007;</span><span style="color:#bbb;">No on-site direction</span></li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a></div>
+    </div>
+    <div class="pkg featured fade-up">
+      <div class="pkg-popular">Most Popular</div>
+      <div class="pkg-top">
+        <span class="pkg-badge badge-pink">Tier 2 Creative Direction</span>
+        <h3 class="pkg-name">The Edit</h3>
+        <p class="pkg-tagline">Concept, mood board, and styling by The Velira. Client secures the location.</p>
+        <div class="pkg-price" style="color:var(--pink);">$500</div>
+        <p class="pkg-price-sub">Per session &#183; Up to 4 hrs on set</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>Custom concept &amp; theme development</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Full mood board by The Velira</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Styling direction &amp; wardrobe guide</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Location scouted &amp; recommended</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>On-site creative direction (4 hrs)</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Shot list &amp; creative brief</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>1 pre-shoot consultation call</li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-pink">Book This Package</a></div>
+    </div>
+    <div class="pkg fade-up">
+      <div class="pkg-top">
+        <span class="pkg-badge badge-blue">Tier 3 Creative Direction</span>
+        <h3 class="pkg-name">The Production</h3>
+        <p class="pkg-tagline">Everything handled by The Velira &#8212; concept, styling, location. Just show up.</p>
+        <div class="pkg-price">$850</div>
+        <p class="pkg-price-sub">Per session &#183; Up to 6 hrs on set</p>
+        <hr class="pkg-divider">
+        <ul class="pkg-features">
+          <li><span class="feat-check feat-yes">&#10003;</span>Custom concept &amp; theme development</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Full mood board by The Velira</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Head-to-toe styling curation</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Location scouted &amp; selected</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>On-site creative direction (6 hrs)</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Full creative brief &amp; shot list</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>2 pre-shoot calls included</li>
+          <li><span class="feat-check feat-yes">&#10003;</span>Pose &amp; movement direction on set</li>
+        </ul>
+      </div>
+      <div class="pkg-footer"><a href="#booking" class="pkg-btn btn-pkg-outline">Book This Package</a></div>
+    </div>
+  </div>
+  <div style="background:var(--navy);border-radius:1rem;overflow:hidden;margin-bottom:1.25rem;border:1.5px solid rgba(244,110,180,0.3);" class="fade-up">
+    <div style="background:var(--pink);padding:0.45rem;text-align:center;font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#fff;">Start Here</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;color:var(--cream);">
+      <div style="padding:2rem 2rem 1.5rem;">
+        <span style="display:inline-block;font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:2rem;margin-bottom:1rem;background:rgba(244,110,180,0.15);color:var(--pink);">Consultation</span>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;margin-bottom:0.35rem;color:var(--cream);">The Consult</h3>
+        <p style="font-size:0.85rem;color:rgba(250,249,246,0.6);line-height:1.6;margin-bottom:1.25rem;">Not sure where to start? Book a 1-on-1 call to discuss your vision, budget, and goals before committing to a package.</p>
+        <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;line-height:1;margin-bottom:0.25rem;color:var(--pink);">$50</div>
+        <p style="font-size:0.78rem;color:rgba(250,249,246,0.5);margin-bottom:1.5rem;">Non-refundable &#183; 30 to 60 minutes</p>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin-bottom:1rem;">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem;">
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(244,110,180,0.2);color:var(--pink);">&#10003;</span>30 to 60 min phone or video call</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(244,110,180,0.2);color:var(--pink);">&#10003;</span>Discuss your vision, ideas, and goals</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(244,110,180,0.2);color:var(--pink);">&#10003;</span>Review budget and find the right package</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(244,110,180,0.2);color:var(--pink);">&#10003;</span>Fee applied toward your package if you book</li>
+        </ul>
+      </div>
+      <div style="padding:2rem 2rem 1.5rem;border-left:1px solid rgba(255,255,255,0.08);">
+        <p style="font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(250,249,246,0.4);margin-bottom:1rem;">After the call</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.75rem;">
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(100,193,246,0.2);color:var(--blue);">&#10003;</span>All discussed details transcribed into a custom document</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(100,193,246,0.2);color:var(--blue);">&#10003;</span>Formal contract prepared and sent to both parties</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(100,193,246,0.2);color:var(--blue);">&#10003;</span>Includes all policies, agreed dates, and deliverables</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(100,193,246,0.2);color:var(--blue);">&#10003;</span>Invoice with full cost breakdown included</li>
+          <li style="font-size:0.84rem;display:flex;align-items:flex-start;gap:0.55rem;line-height:1.5;color:rgba(250,249,246,0.85);"><span style="width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:0.62rem;background:rgba(100,193,246,0.2);color:var(--blue);">&#10003;</span>Signed by both The Velira and the client</li>
+        </ul>
+        <div style="margin-top:1.5rem;padding:1rem;background:rgba(255,255,255,0.05);border-radius:0.6rem;border:1px solid rgba(255,255,255,0.08);">
+          <p style="font-size:0.78rem;color:rgba(250,249,246,0.5);line-height:1.7;">The $50 consultation fee is <strong style="color:var(--pink);">non-refundable</strong> but will be <strong style="color:var(--pink);">credited toward your package</strong> if you choose to move forward.</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding:1.25rem 2rem;border-top:1px solid rgba(255,255,255,0.08);">
+      <a href="#booking" style="display:block;text-align:center;text-decoration:none;padding:0.85rem;border-radius:3rem;font-weight:500;font-size:0.88rem;background:var(--pink);color:#fff;">Book a Consultation &#8594;</a>
+    </div>
+  </div>
+
+  <div class="pkg-addon fade-up">
+    <div>
+      <p class="pkg-addon-title">Add-ons available for any package</p>
+      <p class="pkg-addon-list">Additional hours (+$75/hr) &#183; Rush booking within 48 hrs (+$100) &#183; Velira editorial feature (inquire) &#183; Travel outside DFW (mileage + time)</p>
+    </div>
+    <a href="#booking" class="btn-primary" style="white-space:nowrap;">Inquire Now</a>
+  </div>
+</section>
+
+<section id="magazine">
+  <p class="section-label label-blue fade-up">The Velira Magazine</p>
+  <div class="mag-layout">
+    <div class="mag-cover fade-up">
+      <div class="mag-cover-label">THE VELIRA</div>
+      <div class="mag-cover-sub">Issue No. 1 &#183; Coming Soon</div>
+      <span class="mag-badge-float">Coming Soon</span>
+    </div>
+    <div class="mag-info fade-up">
+      <h2 class="mag-info-title">Where <em>every voice</em><br>finds its stage.</h2>
+      <p class="mag-info-body">The Velira is a creative magazine celebrating the art, culture, and people who breathe life into creativity and innovation. Rooted in Black culture and built for visionaries, dreamers, and creators aged 18&#8211;35.</p>
+      <div>
+        <p style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,249,246,0.4);margin-bottom:0.75rem;">Magazine Sections</p>
+        <div class="mag-sections">
+          <span class="mag-section-tag dot-pink">Art Direction</span>
+          <span class="mag-section-tag dot-green">Fashion</span>
+          <span class="mag-section-tag dot-blue">Music</span>
+          <span class="mag-section-tag dot-pink">Culture</span>
+          <span class="mag-section-tag dot-green">Entrepreneurship</span>
+          <span class="mag-section-tag dot-blue">Visionaries</span>
+          <span class="mag-section-tag dot-pink">Resources</span>
+          <span class="mag-section-tag dot-green">Community</span>
+        </div>
+      </div>
+      <div class="mag-cta">
+        <a href="#booking" class="btn-mag btn-mag-pink">Get Notified at Launch</a>
+        <a href="#about" class="btn-mag btn-mag-ghost">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <p class="section-label label-pink fade-up">Booking</p>
+  <h2 class="section-title fade-up">Let's build<br>your vision.</h2>
+  <p class="section-sub fade-up">Fill out the form below to inquire about a package. The Velira team will be in touch within 48 hours.</p>
+  <div class="booking-wrap">
+    <div class="booking-form-card fade-up">
+      <p class="form-title">Book a Package</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Your first name"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Last name"></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com"></div>
+      <div class="form-group"><label>Instagram Handle</label><input type="text" id="instagram" placeholder="@yourhandle"></div>
+      <div class="form-group">
+        <label>Package Interest</label>
+        <select id="package">
+          <option value="">Select a package...</option>
+          <option>The Consult - Consultation Call - $50</option>
+          <option>The Shot - Photography - $220</option>
+          <option>The Product - Product Shoots - $200</option>
+          <option>The Content - Content Creation - $300</option>
+          <option>The Blueprint - Creative Direction - $150</option>
+          <option>The Edit - Creative Direction - $500</option>
+          <option>The Production - Creative Direction - $850</option>
+          <option>Not sure yet - lets chat</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Shoot Type</label>
+        <select id="shoottype">
+          <option value="">Select a type...</option>
+          <option>Music / Artist</option>
+          <option>Brand / Business</option>
+          <option>Content Creator</option>
+          <option>Fashion / Editorial</option>
+          <option>Product</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tell me about your vision</label><textarea id="vision" placeholder="Describe your shoot idea, vibe, any references, or questions..."></textarea></div>
+      <button class="form-submit" onclick="sendInquiry()">Send Inquiry</button>
+      <p id="form-msg" style="display:none;margin-top:1rem;font-size:0.85rem;text-align:center;font-weight:500;"></p>
+    </div>
+    <div class="booking-info fade-up">
+      <div class="booking-note">
+        <p class="booking-note-title">Photographer fees are separate</p>
+        <p class="booking-note-body">The Velira directs &#8212; your photographer shoots. Don't have one? We can recommend trusted photographers in the DFW area.</p>
+      </div>
+      <div>
+        <p style="font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:1rem;">Booking Policies</p>
+        <div class="booking-policy">
+          <div class="policy-item"><span class="policy-dot"></span>50% non-refundable deposit required to secure your date</div>
+          <div class="policy-item"><span class="policy-dot"></span>Remaining balance due 48 hours before the shoot</div>
+          <div class="policy-item"><span class="policy-dot"></span>Rescheduling allowed once with 72+ hours notice</div>
+          <div class="policy-item"><span class="policy-dot"></span>All clients sign a Creative Services Agreement</div>
+          <div class="policy-item"><span class="policy-dot"></span>Location costs always paid by the client</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#999;margin-bottom:0.75rem;">Connect</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <a href="#" class="social-pill">Instagram</a>
+          <a href="#" class="social-pill">TikTok</a>
+          <a href="#" class="social-pill">Pinterest</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">The <span>Velira</span></div>
+      <p class="footer-tagline">Where passion meets purpose, where art meets soul, and where every voice finds its stage.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="#packages">Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Magazine</p>
+      <ul class="footer-links">
+        <li><a href="#magazine">About The Velira</a></li>
+        <li><a href="#magazine">Issue 1 Coming Soon</a></li>
+        <li><a href="#booking">Get Notified</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="#booking">Book a Package</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#c0b4a8a5b6a5aca9b2a180afb5b4acafafabeea3afad"><span class="__cf_email__" data-cfemail="2a5e424f5c4f4643584b6a455f5e4645454104494547">[email&#160;protected]</span></a></li>
+        <li><a href="#booking">Collaborations</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>2025 The Velira Creative Direction and Magazine</p>
+    <div class="footer-socials">
+      <a href="#" class="social-pill">Instagram</a>
+      <a href="#" class="social-pill">TikTok</a>
+      <a href="#" class="social-pill">Pinterest</a>
+      <a href="#" class="social-pill">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function sendInquiry(){
+  var fname=document.getElementById('fname').value.trim();
+  var lname=document.getElementById('lname').value.trim();
+  var email=document.getElementById('email').value.trim();
+  var instagram=document.getElementById('instagram').value.trim();
+  var pkg=document.getElementById('package').value;
+  var shoot=document.getElementById('shoottype').value;
+  var vision=document.getElementById('vision').value.trim();
+  var msg=document.getElementById('form-msg');
+  var btn=document.querySelector('.form-submit');
+  if(!fname||!email||!pkg){
+    msg.style.display='block';
+    msg.style.color='#e24b4a';
+    msg.textContent='Please fill in your name, email, and package selection.';
+    return;
+  }
+  msg.style.display='none';
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  fetch('https://formspree.io/f/xbdpqrrb',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({name:fname+' '+lname,email:email,instagram:instagram,package:pkg,shoot_type:shoot,message:vision})
+  }).then(function(res){
+    if(res.ok){
+      btn.textContent='Inquiry Sent!';
+      btn.style.background='#1D9E75';
+      msg.style.display='block';
+      msg.style.color='#1D9E75';
+      msg.textContent='Your inquiry has been sent! We will be in touch within 48 hours.';
+      document.getElementById('fname').value='';
+      document.getElementById('lname').value='';
+      document.getElementById('email').value='';
+      document.getElementById('instagram').value='';
+      document.getElementById('package').value='';
+      document.getElementById('shoottype').value='';
+      document.getElementById('vision').value='';
+    } else {
+      btn.textContent='Send Inquiry';
+      btn.disabled=false;
+      msg.style.display='block';
+      msg.style.color='#e24b4a';
+      msg.textContent='Something went wrong. Please email thevelira@outlook.com directly.';
+    }
+  }).catch(function(){
+    btn.textContent='Send Inquiry';
+    btn.disabled=false;
+    msg.style.display='block';
+    msg.style.color='#e24b4a';
+    msg.textContent='Something went wrong. Please email thevelira@outlook.com directly.';
+  });
+}
+const observer=new IntersectionObserver((entries)=>{
