@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velira — Links</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#F46EB4;--green:#9FC24E;--blue:#64C1F6;--navy:#1A1A2E;--cream:#FAF9F6;--dark:#111111;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+  position:relative;
+  overflow-x:hidden;
+}
+
+/* Background blobs */
+body::before{
+  content:'';
+  position:fixed;
+  width:400px;height:400px;
+  background:var(--pink);
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.12;
+  top:-100px;left:-100px;
+  pointer-events:none;
+}
+body::after{
+  content:'';
+  position:fixed;
+  width:350px;height:350px;
+  background:var(--blue);
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:0.1;
+  bottom:-80px;right:-80px;
+  pointer-events:none;
+}
+
+.wrap{
+  width:100%;
+  max-width:520px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+  position:relative;
+  z-index:1;
+}
+
+/* PROFILE */
+.profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.75rem;
+  margin-bottom:2rem;
+  text-align:center;
+}
+.avatar{
+  width:90px;height:90px;
+  border-radius:50%;
+  border:3px solid var(--pink);
+  background:linear-gradient(135deg,var(--pink),var(--blue));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:900;
+  color:#fff;
+  margin-bottom:0.25rem;
+  overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;}
+.profile-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:900;
+  color:var(--cream);
+  letter-spacing:-0.02em;
+}
+.profile-name span{color:var(--pink);}
+.profile-bio{
+  font-size:0.88rem;
+  color:rgba(250,249,246,0.55);
+  line-height:1.6;
+  max-width:340px;
+}
+.profile-dots{
+  display:flex;gap:0.4rem;margin-top:0.25rem;
+}
+.dot{width:6px;height:6px;border-radius:50%;}
+
+/* SECTION LABELS */
+.section-label{
+  font-size:0.65rem;
+  font-weight:500;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(250,249,246,0.3);
+  margin:1.5rem 0 0.75rem;
+  align-self:flex-start;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  width:100%;
+}
+.section-label::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:rgba(255,255,255,0.08);
+}
+
+/* LINK BUTTONS */
+.link-btn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1rem 1.25rem;
+  border-radius:0.75rem;
+  text-decoration:none;
+  margin-bottom:0.65rem;
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.04);
+  transition:transform 0.2s,background 0.2s,border-color 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+.link-btn:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.15);
+}
+.link-btn::before{
+  content:'';
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  border-radius:3px 0 0 3px;
+}
+.pink-accent::before{background:var(--pink);}
+.green-accent::before{background:var(--green);}
+.blue-accent::before{background:var(--blue);}
+
+.link-icon{
+  width:40px;height:40px;
+  border-radius:0.5rem;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  font-size:1.1rem;
+}
+.icon-pink{background:rgba(244,110,180,0.15);}
+.icon-green{background:rgba(159,194,78,0.15);}
+.icon-blue{background:rgba(100,193,246,0.15);}
+.icon-navy{background:rgba(255,255,255,0.08);}
+
+.link-text{flex:1;}
+.link-title{
+  font-size:0.95rem;
+  font-weight:500;
+  color:var(--cream);
+  margin-bottom:0.1rem;
+}
+.link-sub{
+  font-size:0.75rem;
+  color:rgba(250,249,246,0.4);
+}
+.link-arrow{
+  font-size:0.85rem;
+  color:rgba(250,249,246,0.25);
+  transition:color 0.2s,transform 0.2s;
+}
+.link-btn:hover .link-arrow{
+  color:var(--pink);
+  transform:translateX(3px);
+}
+
+/* FEATURED BUTTON */
+.link-btn.featured{
+  background:linear-gradient(135deg,rgba(244,110,180,0.15),rgba(100,193,246,0.1));
+  border-color:rgba(244,110,180,0.3);
+}
+.link-btn.featured:hover{
+  background:linear-gradient(135deg,rgba(244,110,180,0.25),rgba(100,193,246,0.15));
+  border-color:rgba(244,110,180,0.5);
+}
+
+/* FOOTER */
+.footer{
+  margin-top:2rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.4rem;
+}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;
+  font-weight:900;
+  color:rgba(250,249,246,0.3);
+}
+.footer-logo span{color:var(--pink);opacity:0.6;}
+.footer-copy{
+  font-size:0.72rem;
+  color:rgba(250,249,246,0.2);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="avatar">JT</div>
+    <h1 class="profile-name">The <span>Velira</span></h1>
+    <p class="profile-bio">Creative Direction · Photography · Magazine<br>Amplifying diverse voices · Black culture · DFW, Texas</p>
+    <div class="profile-dots">
+      <div class="dot" style="background:var(--pink);"></div>
+      <div class="dot" style="background:var(--green);"></div>
+      <div class="dot" style="background:var(--blue);"></div>
+    </div>
+  </div>
+
+  <!-- WEBSITE -->
+  <a href="https://www.thevelira.org" target="_blank" class="link-btn featured pink-accent">
+    <div class="link-icon icon-pink">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F46EB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">The Velira — Official Website</p>
+      <p class="link-sub">thevelira.org · Services, Portfolio & Magazine</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <!-- BOOK -->
+  <a href="https://www.thevelira.org/#booking" target="_blank" class="link-btn pink-accent">
+    <div class="link-icon icon-pink">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F46EB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">Book a Package</p>
+      <p class="link-sub">Creative Direction · Photography · Content Creation</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <!-- PERSONAL SECTION -->
+  <div class="section-label">Jada Titus — Personal</div>
+
+  <a href="https://www.instagram.com/thejadajourney/" target="_blank" class="link-btn pink-accent">
+    <div class="link-icon icon-pink">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F46EB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">Instagram</p>
+      <p class="link-sub">@thejadajourney</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <a href="https://www.tiktok.com/@thejadajourney" target="_blank" class="link-btn pink-accent">
+    <div class="link-icon icon-pink">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F46EB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">TikTok</p>
+      <p class="link-sub">@thejadajourney</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <a href="https://www.linkedin.com/in/jada-titus" target="_blank" class="link-btn blue-accent">
+    <div class="link-icon icon-blue">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64C1F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">LinkedIn</p>
+      <p class="link-sub">Jada Titus</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <!-- BRAND SECTION -->
+  <div class="section-label">The Velira — Brand</div>
+
+  <a href="https://www.instagram.com/thevelira/" target="_blank" class="link-btn green-accent">
+    <div class="link-icon icon-green">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9FC24E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">Instagram</p>
+      <p class="link-sub">@thevelira</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <a href="https://www.tiktok.com/@thevelira" target="_blank" class="link-btn green-accent">
+    <div class="link-icon icon-green">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9FC24E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">TikTok</p>
+      <p class="link-sub">@thevelira</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <a href="https://www.thevelira.org/portfolio.html" target="_blank" class="link-btn green-accent">
+    <div class="link-icon icon-green">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9FC24E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+    </div>
+    <div class="link-text">
+      <p class="link-title">Portfolio</p>
+      <p class="link-sub">View The Velira's work</p>
+    </div>
+    <span class="link-arrow">&#8594;</span>
+  </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">The <span>Velira</span></div>
+    <p class="footer-copy">&#169; 2025 The Velira LLC · thevelira.org</p>
+  </div>
+
+</div>
+</body>
+</html>
